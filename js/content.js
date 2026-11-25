@@ -30,7 +30,6 @@ var CONTENT = {
      ---------------------------------------------------------- */
   photos: [
     { file: "img/baptism.webp",      caption: "Baptism Sunday &mdash; up out of the water" },
-    { file: "img/doors.webp",        caption: "Walking in on a Sunday morning" },
     { file: "img/room.webp",         caption: "The room, mid-service" },
     { file: "img/crowd.webp",        caption: "Hands up in the back half" },
     { file: "img/singer.webp",       caption: "Leading worship on a Sunday" },
@@ -75,7 +74,7 @@ var CONTENT = {
     {
       label: "Just me",
       title: "Walking in on your own",
-      photo: "img/doors.webp",
+      photo: "img/plan-solo.webp",
       walk:  "Front doors. There&rsquo;s a team in lanyards who will spot you and walk you in.",
       kids:  "Not applicable &mdash; it&rsquo;s just you.",
       note:  "Sitting alone is completely normal here, and nobody will make you stand up or introduce yourself."
@@ -83,7 +82,7 @@ var CONTENT = {
     {
       label: "Me + little kids",
       title: "Coming with little ones",
-      photo: "img/welcome.webp",
+      photo: "img/plan-little-ones.webp",
       walk:  "Kids check-in kiosk, just inside the lobby. It takes about two minutes.",
       kids:  "<b>Newborn to Grade 4</b> get checked in and you get a matching pickup tag. They have their own service.",
       note:  "Movement Kids runs at both services, so whichever one you pick, they&rsquo;re covered."
@@ -91,7 +90,7 @@ var CONTENT = {
     {
       label: "With a teenager",
       title: "Bringing a teenager",
-      photo: "img/pray.webp",
+      photo: "img/plan-teen.webp",
       walk:  "Front doors together. Grades 5&ndash;6 have Club 56; Grades 7&ndash;12 sit in the main service.",
       kids:  "<b>Grades 5 &amp; 6</b> head to Club 56. <b>Grades 7&ndash;12</b> stay with you, then connect at Youth midweek.",
       note:  "If they&rsquo;d rather not talk to anyone on day one, that&rsquo;s genuinely fine. No one will corner them."
