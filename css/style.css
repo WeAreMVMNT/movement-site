@@ -1273,13 +1273,16 @@ a.way{color:inherit}
 .crumbs a:hover{color:var(--teal)}
 .crumbs [aria-current]{color:var(--ink)}
 /* pages whose hero runs edge to edge: breadcrumbs sit on top of it */
-.youth-page .crumbs,.crumbs:has(+ .bap-hero){position:absolute;left:0;right:0;z-index:5}
+.youth-page .crumbs,.crumbs:has(+ .bap-hero),.crumbs:has(+ .xmas-hero){position:absolute;left:0;right:0;z-index:5}
 .youth-page .crumbs{max-width:var(--maxw)}
 .youth-page .crumbs a,.youth-page .crumbs [aria-current]{color:var(--y-text)}
 .youth-page .crumbs ol{color:var(--y-dim)}
 .youth-page .crumbs li + li::before{color:rgba(255,255,255,.3)}
 .crumbs:has(+ .bap-hero) a,.crumbs:has(+ .bap-hero) [aria-current]{color:#fff}
 .crumbs:has(+ .bap-hero) li + li::before{color:rgba(255,255,255,.4)}
+.crumbs:has(+ .xmas-hero) a,.crumbs:has(+ .xmas-hero) [aria-current]{color:var(--x-cream)}
+.crumbs:has(+ .xmas-hero) a:hover{color:var(--x-green-lt)}
+.crumbs:has(+ .xmas-hero) li + li::before{color:rgba(255,244,224,.45)}
 main{display:block;position:relative}
 
 .foot-bot small a,.foot-link{color:inherit;text-decoration:underline;text-underline-offset:3px}
@@ -1527,7 +1530,7 @@ html.lenis,html.lenis body{height:auto}
 .xmas-hero{
   position:relative;isolation:isolate;overflow:hidden;text-align:center;color:var(--x-cream);
   background:var(--x-deep) url('../img/xmas-texture.webp') center/cover;
-  padding-block:clamp(20px,4vw,48px) clamp(44px,6vw,84px);
+  padding-block:clamp(54px,6vw,72px) clamp(44px,6vw,84px);
 }
 .xmas-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(90% 70% at 50% 40%,rgba(120,8,12,.35) 30%,rgba(60,4,6,.7))}
 .xmas-art{
