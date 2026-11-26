@@ -1591,29 +1591,174 @@ html.lenis,html.lenis body{height:auto}
   .youth-page{--x-red-text:#b3141c}
 }
 
-/* -- Christmas popup (js/xmas-popup.js) -- */
-.xmas-pop{position:fixed;inset:0;z-index:260;display:grid;place-items:center;padding:16px;background:rgba(10,12,14,.6);backdrop-filter:blur(4px);opacity:0;transition:opacity .3s ease}
-.xmas-pop.is-open{opacity:1}
-.xmas-pop-card{
+/* ============================================================
+   EVENT COUNTDOWNS (js/countdown.js)
+   ============================================================ */
+.countdown{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.countdown span{display:flex;flex-direction:column;align-items:center;min-width:72px;padding:12px 10px 10px;border-radius:16px}
+.countdown b{font-family:var(--disp);font-size:clamp(28px,3.4vw,40px);font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.countdown small{margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.countdown-msg{font-family:var(--disp);font-weight:800;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em}
+.xmas-cd-label{margin-top:22px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--x-green-lt)}
+.xmas-countdown{margin-top:10px}
+.xmas-countdown span{background:rgba(255,244,224,.12);border:1.5px solid rgba(255,244,224,.35)}
+@media (max-width:420px){.countdown{gap:6px}.countdown span{min-width:0;flex:1;padding:10px 4px 8px}}
+
+/* ============================================================
+   REVIVAL NIGHT (revival.html) + the blue nav link.
+   Palette and type from the "Movement Revival Nights" branding
+   guide: royal blue, sky blue, off-white, butter, light green,
+   sage; black-and-white photos with thin green frames.
+   Contrast: dark text on green/sage/sky 9.7:1+, white or light
+   green on royal blue 6:1+.
+   ============================================================ */
+:root{--r-blue:#30549e;--r-sky:#a2bfeb;--r-off:#f1f1f1;--r-butter:#f6f5bf;--r-green:#d9f1b7;--r-sage:#d5dfde;--r-ink:#12161a;--r-blue-text:#30549e}
+.rev-grot{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+
+/* nav link */
+.nav .nav-links a.nav-rev{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 15px 8px 11px;border-radius:999px;
+  background:var(--r-blue);color:var(--r-green);font-weight:700;
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--r-sky) 70%,transparent),0 6px 16px -8px rgba(48,84,158,.9);
+  transition:background .2s ease,color .2s ease,transform .2s ease;
+}
+.nav .nav-links a.nav-rev:hover{background:var(--r-green);color:var(--r-ink);transform:translateY(-1px)}
+.nav-rev-icon{width:14px;height:14px;fill:currentColor;flex:none;transform-origin:50% 90%;animation:revFlicker 1.8s ease-in-out infinite}
+@keyframes revFlicker{0%,100%{transform:scale(1) rotate(0)}30%{transform:scale(1.12,1.2) rotate(-4deg)}60%{transform:scale(.95,1.05) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.nav-rev-icon{animation:none}}
+@media (max-width:1080px){
+  .nav .nav-links a.nav-rev{margin:10px 0 0;padding:13px 18px;border-bottom:none;font-size:19px;justify-content:flex-start;gap:10px}
+  .nav .nav-links a.nav-rev + a.nav-xmas{margin-top:8px}
+  .nav-rev-icon{width:18px;height:18px}
+}
+
+/* hero */
+.crumbs:has(+ .rev-hero){position:absolute;left:0;right:0;z-index:5}
+.crumbs:has(+ .rev-hero) a,.crumbs:has(+ .rev-hero) [aria-current]{color:var(--r-ink)}
+.crumbs:has(+ .rev-hero) li + li::before{color:rgba(18,22,26,.35)}
+.rev-hero{background:var(--r-green);color:var(--r-ink);text-align:center;padding-block:clamp(64px,8vw,96px) 0;overflow:hidden}
+.rev-title{margin:0}
+.rev-title img{display:block;width:min(100%,760px);height:auto;margin:0 auto}
+.rev-when{margin-top:clamp(18px,2.4vw,28px);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.03em;font-size:clamp(26px,4vw,48px);line-height:1}
+.rev-where{margin-top:12px;font-size:clamp(15px,1.6vw,18px);font-weight:600;color:var(--r-blue-text)}
+.rev-countdown span{background:var(--r-blue);color:#fff}
+.rev-countdown small{color:var(--r-green)}
+.rev-countdown.is-over .countdown-msg{color:var(--r-blue-text)}
+.rev-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
+.rev-cta--left{justify-content:flex-start}
+.rev-hero .rev-pill,.rev-invite .rev-pill{background:var(--r-blue);border-color:var(--r-blue);color:#fff}
+.rev-hero .rev-pill:hover,.rev-invite .rev-pill:hover{background:var(--r-ink);border-color:var(--r-ink)}
+.rev-hero .rev-ghost{color:var(--r-ink);border-color:var(--r-ink)}
+.rev-hero .rev-ghost:hover{background:var(--r-ink);color:var(--r-green)}
+.rev-strip{display:grid;grid-template-columns:1.3fr .8fr 1.3fr;gap:clamp(8px,1.4vw,16px);margin-top:clamp(36px,5vw,60px);align-items:end}
+.rev-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:3px solid var(--r-green);outline:1.5px solid rgba(18,22,26,.15);border-radius:4px 4px 0 0}
+.rev-strip img:nth-child(2){aspect-ratio:3/4}
+
+/* speaker */
+.rev-speaker{background:var(--r-blue);color:#fff;padding-block:clamp(56px,8vw,110px)}
+.rev-speaker-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.rev-speaker-img{width:100%;max-width:460px;height:auto;justify-self:center;border-radius:8px;box-shadow:0 30px 60px -24px rgba(0,0,0,.5)}
+.rev-kick{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--r-green)}
+.rev-kick--blue{color:var(--r-blue-text)}
+.rev-speaker h2{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.045em;font-size:clamp(44px,7vw,96px);line-height:.9;margin-top:10px}
+.rev-role{margin-top:10px;font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--r-green)}
+.rev-speaker-txt > p:not(.rev-role){margin-top:18px;font-size:17px;line-height:1.6;color:rgba(255,255,255,.88);max-width:40ch}
+.rev-facts{margin:24px 0 0;border-top:1px solid rgba(255,255,255,.25);max-width:440px}
+.rev-facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.25);font-size:15.5px}
+.rev-facts dt{color:var(--r-sky);font-weight:700}
+.rev-facts dd{margin:0;font-weight:700;text-align:right}
+
+/* what if...? */
+.rev-what{background:var(--r-sage);color:var(--r-ink);padding-block:clamp(56px,8vw,110px)}
+.rev-what .rev-kick{color:var(--r-blue-text)}
+.rev-questions{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:clamp(18px,2.4vw,28px)}
+.rev-questions li{display:flex;flex-direction:column;gap:4px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.04em;line-height:.95}
+.rev-questions s{font-size:clamp(16px,2vw,24px);font-weight:600;color:#4a5358;text-decoration-color:#d61f26;text-decoration-thickness:2px}
+.rev-questions b{font-size:clamp(26px,4.4vw,56px);font-weight:700}
+
+/* there is always more to find */
+.rev-more{background:var(--r-green);color:var(--r-ink);padding-block:clamp(40px,6vw,80px);overflow:hidden;text-align:center}
+.rev-more-line{white-space:nowrap;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.04em;font-size:clamp(22px,3.4vw,44px);line-height:1;color:rgba(18,22,26,.16);transform:translateX(-8%)}
+.rev-more-line--b{transform:translateX(-24%)}
+.rev-more-big{margin:clamp(14px,2vw,24px) auto;padding-inline:16px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.045em;font-size:clamp(40px,7.4vw,104px);line-height:.9}
+.rev-more-big em{font-style:normal;color:var(--r-blue-text)}
+
+/* I found ___ */
+.rev-script{color:var(--r-blue-text);font-style:italic}
+.rev-found{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,18px)}
+.rev-found img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
+@media (max-width:700px){.rev-found{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* invite */
+.rev-invite{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(26px,5vw,72px);align-items:center}
+.rev-invite-img{width:100%;max-width:420px;height:auto;justify-self:center;border-radius:8px;box-shadow:var(--shadow);transform:rotate(-2deg)}
+.rev-invite h2{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.045em;font-size:clamp(36px,5vw,64px);line-height:.92;margin:10px 0 14px}
+.rev-invite p{color:var(--ink2);font-size:17px;line-height:1.6;max-width:44ch}
+@media (max-width:820px){.rev-speaker-in,.rev-invite{grid-template-columns:1fr}.rev-speaker-img{max-width:340px}.rev-invite-img{max-width:320px}}
+
+@media (prefers-color-scheme:dark){
+  :root{--r-blue-text:#a2bfeb}
+  .rev-hero,.rev-what,.rev-more{--r-blue-text:#30549e}
+}
+
+/* ============================================================
+   EVENT POPUP (js/promo.js) - Revival Night, then Christmas
+   ============================================================ */
+.promo-pop{position:fixed;inset:0;z-index:260;display:grid;place-items:center;padding:16px;background:rgba(10,12,14,.6);backdrop-filter:blur(4px);opacity:0;transition:opacity .3s ease}
+.promo-pop.is-open{opacity:1}
+.promo-card{
   position:relative;width:min(100%,520px);max-height:calc(100dvh - 32px);overflow:auto;text-align:center;
-  padding:clamp(18px,4vw,30px) clamp(18px,4vw,32px) clamp(22px,4vw,32px);border-radius:28px;color:var(--x-cream);
-  background:linear-gradient(rgba(120,8,12,.45),rgba(120,8,12,.45)),var(--x-deep) url('../img/xmas-texture.webp') center/cover;
-  box-shadow:0 30px 80px -20px rgba(0,0,0,.7),inset 0 0 0 2px color-mix(in srgb,var(--x-green-lt) 45%,transparent);
+  padding:clamp(20px,4vw,32px);border-radius:28px;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
   transform:translateY(16px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.3,1);
 }
-.xmas-pop.is-open .xmas-pop-card{transform:none}
-.xmas-pop-card:focus{outline:none}
-.xmas-pop-art{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)}
-.xmas-pop-card h2{font-size:clamp(26px,5vw,34px);letter-spacing:-.03em;margin-top:-4px}
-.xmas-pop-times{margin-top:10px;font-size:16px}
-.xmas-pop-times b{font-family:var(--disp);font-size:19px;letter-spacing:-.02em}
-.xmas-pop-times span{color:var(--x-green-lt);margin-inline:6px}
-.xmas-pop-card p:not(.xmas-pop-times){margin:12px auto 0;max-width:36ch;font-size:16px;line-height:1.5}
-.xmas-pop-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
-.xmas-pop .xmas-pop-go{background:var(--x-cream);border-color:var(--x-cream);color:#7a0c10}
-.xmas-pop .xmas-pop-go:hover{background:var(--x-green);border-color:var(--x-green);color:#fff}
-.xmas-pop .xmas-pop-later{color:var(--x-cream);border-color:rgba(255,244,224,.55)}
-.xmas-pop .xmas-pop-later:hover{background:var(--x-cream);border-color:var(--x-cream);color:#7a0c10}
-.xmas-pop-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:15px;color:var(--x-cream);background:rgba(0,0,0,.25)}
-.xmas-pop-x:hover{background:rgba(0,0,0,.45)}
-@media (prefers-reduced-motion:reduce){.xmas-pop,.xmas-pop-card{transition:none}}
+.promo-card:focus{outline:none}
+.promo-pop.is-open .promo-card{transform:none}
+.promo-title{font-size:clamp(26px,5vw,34px);letter-spacing:-.03em}
+.promo-when{margin-top:8px;font-size:16px}
+.promo-when b{font-family:var(--disp);font-size:19px;letter-spacing:-.02em}
+.promo-card > p:not(.promo-when){margin:12px auto 0;max-width:36ch;font-size:16px;line-height:1.5}
+.promo-countdown{margin-top:14px}
+.promo-countdown span{min-width:64px;padding:10px 6px 8px}
+.promo-countdown b{font-size:28px}
+.promo-countdown .countdown-msg{font-size:20px}
+.promo-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+.promo-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:rgba(0,0,0,.12)}
+.promo-x:hover{background:rgba(0,0,0,.25)}
+@media (prefers-reduced-motion:reduce){.promo-pop,.promo-card{transition:none}}
+/* Christmas look */
+.promo-pop--christmas .promo-card{color:var(--x-cream);background:linear-gradient(rgba(120,8,12,.45),rgba(120,8,12,.45)),var(--x-deep) url('../img/xmas-texture.webp') center/cover;box-shadow:0 30px 80px -20px rgba(0,0,0,.7),inset 0 0 0 2px color-mix(in srgb,var(--x-green-lt) 45%,transparent)}
+.promo-art{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)}
+.promo-pop--christmas .promo-title{margin-top:-4px}
+.promo-pop--christmas .promo-when span{color:var(--x-green-lt);margin-inline:6px}
+.promo-pop--christmas .countdown span{background:rgba(255,244,224,.12);border:1.5px solid rgba(255,244,224,.35)}
+.promo-pop--christmas .promo-go{background:var(--x-cream);border-color:var(--x-cream);color:#7a0c10}
+.promo-pop--christmas .promo-go:hover{background:var(--x-green);border-color:var(--x-green);color:#fff}
+.promo-pop--christmas .promo-later{color:var(--x-cream);border-color:rgba(255,244,224,.55)}
+.promo-pop--christmas .promo-later:hover{background:var(--x-cream);border-color:var(--x-cream);color:#7a0c10}
+.promo-pop--christmas .promo-x{color:var(--x-cream);background:rgba(0,0,0,.25)}
+/* Revival look */
+.promo-pop--revival .promo-card{background:var(--r-green);color:var(--r-ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.7),inset 0 0 0 2px var(--r-blue)}
+.promo-wordmark{display:block;width:min(100%,400px);height:auto;margin:8px auto 4px}
+.promo-pop--revival .promo-title{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.045em;color:#30549e;margin-top:8px}
+.promo-pop--revival .countdown span{background:#30549e;color:#fff}
+.promo-pop--revival .countdown small{color:var(--r-green)}
+.promo-pop--revival .promo-go{background:#30549e;border-color:#30549e;color:#fff}
+.promo-pop--revival .promo-go:hover{background:var(--r-ink);border-color:var(--r-ink)}
+.promo-pop--revival .promo-later{color:var(--r-ink);border-color:var(--r-ink)}
+.promo-pop--revival .promo-later:hover{background:var(--r-ink);color:var(--r-green)}
+.promo-pop--revival .promo-x{color:var(--r-ink)}
+
+/* narrow desktops: keep the nav (now with two event links) on one line */
+.nav-links a,.nav-group-btn,.nav .pill{white-space:nowrap}
+@media (min-width:1081px) and (max-width:1260px){
+  .nav-in{gap:14px}
+  .nav-links{gap:16px}
+  .nav-links a,.nav-group-btn{font-size:14px}
+  .nav .nav-links a.nav-rev,.nav .nav-links a.nav-xmas{padding:7px 12px 7px 9px}
+  .nav .pill{padding:10px 16px;font-size:13px}
+}
+@media (min-width:1081px) and (max-width:1200px){.nav-logo b{display:none}}
+/* the two event pills sit closer together than the regular links */
+@media (min-width:1081px){.nav .nav-links a.nav-rev{margin-right:-10px}}
+@media (min-width:1081px) and (max-width:1260px){.nav .nav-links a.nav-rev{margin-right:-2px}}

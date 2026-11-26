@@ -36,7 +36,7 @@
 
 <!-- Styles -->
 <!-- bump every ?v= number (css and js, all pages) after changing them so browsers fetch the new versions -->
-<link rel="stylesheet" href="css/style.css?v=28">
+<link rel="stylesheet" href="css/style.css?v=32">
 <!-- Structured data for search engines -->
 <script type="application/ld+json">
 {
@@ -204,6 +204,7 @@
       <img src="img/logo.png" alt=""><b>Movement Church</b>
     </a>
     <div class="nav-links" id="navMenu">
+      <a class="nav-rev" href="revival.html"><svg class="nav-rev-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5c.6 3.4 3 5.2 4.6 7.4 1.4 1.9 2.4 3.9 2.4 6.3A7 7 0 0 1 12 22.5a7 7 0 0 1-7-7.3c0-2.6 1.3-4.6 2.9-6.2.2 1.9 1 3.1 2.3 3.8-.3-4.2 1-7.8 1.8-11.3Z"/></svg>Revival Night</a>
       <a class="nav-xmas" href="christmas.html" aria-current="page"><svg class="nav-xmas-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.9 7.6 16.4 11.1 24 12 16.4 12.9 12.9 16.4 12 24 11.1 16.4 7.6 12.9 0 12 7.6 11.1 11.1 7.6 12 0Z"/></svg>Christmas</a>
       <a href="visit.html">Visit</a>
       <div class="nav-group">
@@ -252,6 +253,14 @@
       <li><b>Wed, Dec 23</b><span>7pm</span></li>
       <li><b>Thu, Dec 24</b><span>1pm &middot; 3pm &middot; 5pm</span></li>
     </ul>
+    <p class="xmas-cd-label">Christmas Eve Experiences start in</p>
+    <div class="countdown xmas-countdown" data-countdown="2026-12-23T19:00:00-05:00" data-live-until="2026-12-24T19:00:00-05:00"
+         data-live="Christmas Eve Experiences are happening now!" data-done="Merry Christmas from Movement Church!" role="timer" aria-label="Time until the first Christmas Eve Experience">
+      <span><b data-cd="d">0</b><small>days</small></span>
+      <span><b data-cd="h">00</b><small>hours</small></span>
+      <span><b data-cd="m">00</b><small>mins</small></span>
+      <span><b data-cd="s">00</b><small>secs</small></span>
+    </div>
     <p class="xmas-lede">Invite your family, friends and neighbours for an unforgettable Christmas Eve Experience!</p>
     <div class="xmas-cta">
       <a class="pill xmas-pill" href="img/christmas-invite.jpg" download="Movement-Christmas-Invite.jpg">Download the invite <span aria-hidden="true">&#8595;</span></a>
@@ -322,7 +331,7 @@
 
 <!-- ==========================================================
      INVITE - download the invite graphic or share this page
-     (share button: js/christmas.js)
+     (share button: js/share.js)
      ========================================================== -->
 <section class="sec shell pt0">
   <div class="xmas-invite reveal">
@@ -333,7 +342,7 @@
       <p>Christmas Eve is one of the easiest times to bring someone to church. Send them the invite, or share this page.</p>
       <div class="xmas-cta">
         <a class="pill xmas-pill" href="img/christmas-invite.jpg" download="Movement-Christmas-Invite.jpg">Download the invite <span aria-hidden="true">&#8595;</span></a>
-        <button class="pill pill--ghost xmas-ghost" type="button" id="xmasShare">Share this page</button>
+        <button class="pill pill--ghost xmas-ghost" type="button" data-share="christmas">Share this page</button>
       </div>
     </div>
   </div>
@@ -395,11 +404,13 @@
 <!-- toast.js shows success/error messages for everything below -->
 <script src="js/toast.js?v=13"></script>
 <script src="js/consent.js?v=13"></script>
+<script src="js/promo.js?v=1"></script>
 <script src="js/nav.js?v=16"></script>
 <script src="js/intro.js?v=14"></script>
 <!-- smooth scrolling, fade-ins, parallax, progress bar (scroll.js uses the Lenis library) -->
 <script src="js/vendor/lenis.min.js?v=13"></script>
 <script src="js/scroll.js?v=16"></script>
-<script src="js/christmas.js?v=1"></script>
+<script src="js/share.js?v=1"></script>
+<script src="js/countdown.js?v=1"></script>
 </body>
 </html>

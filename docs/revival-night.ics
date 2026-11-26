@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Movement Church//Revival Night//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:revival-night-2026-11-29@wearemovement.ca
+DTSTAMP:20261125T000000Z
+DTSTART:20261129T230000Z
+SUMMARY:Movement Revival Night
+DESCRIPTION:Guest speaker Sam Picken\, Lead Pastor at C3 Assembly. https://www.wearemovement.ca/revival.html
+LOCATION:Movement Church\, 65 Lansdowne Ave\, Woodstock\, ON N4T 1S8
+URL:https://www.wearemovement.ca/revival.html
+END:VEVENT
+END:VCALENDAR
