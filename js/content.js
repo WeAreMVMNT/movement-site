@@ -131,7 +131,7 @@ var CONTENT = {
       url:   "club56.html"
     },
     {
-      photo: "img/worship.webp",
+      photo: "img/youth-group.webp",
       age:   "Grades 7 &ndash; 12",
       name:  "Movement Youth",
       text:  "Students who actually want to be here. Worship, small groups, camps, and leaders who know their names.",
@@ -152,7 +152,7 @@ var CONTENT = {
       url:   "care.html"
     },
     {
-      photo: "img/handlight.webp",
+      photo: "img/serve-production.webp",
       age:   "Serve",
       name:  "Teams",
       text:  "Cameras, worship, kids, hospitality, parking. The fastest way to stop feeling new here is to get on a team.",

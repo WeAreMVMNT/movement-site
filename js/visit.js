@@ -44,14 +44,14 @@
     {
       id: "entrance", name: "Main entrance", group: "welcome",
       text: "Front doors. There&rsquo;s a team in lanyards who will spot you and walk you in.",
-      photo: "img/place-doors.webp",
+      photo: "img/place-entrance.webp",
       shape: "M287,877 L545,877 L545,1153 L287,1153 Z", label: [416, 1015],
       route: [[400, 1015], [548, 975]]
     },
     {
       id: "lobby", name: "Lobby", group: "welcome",
       text: "Just inside the front doors. The auditorium doors are straight ahead.",
-      photo: "img/place-auditorium-doors.webp",
+      photo: "img/place-lobby.webp",
       shape: "M548,898 L1003,898 L1003,968 L1168,968 L1168,1050 L1001,1050 L1001,1240 L1019,1240 L1019,1300 L961,1300 L961,1240 L903,1240 L903,1244 L822,1244 L822,1050 L548,1050 Z", label: [860, 975],
       route: FROM_DOORS
     },
@@ -65,6 +65,7 @@
     {
       id: "stage", name: "Stage", group: "worship",
       text: "Where the band leads worship and the message is shared.",
+      photo: "img/place-stage.webp",
       shape: "M592,250 L620,172 L620,95 L1105,95 L1105,175 L1130,250 Q861,385 592,250 Z", label: [861, 205],
       route: FROM_DOORS.concat([[860, 895], [860, 380]])
     },
@@ -77,6 +78,7 @@
     {
       id: "hallway", name: "Kids Hallway", group: "kids",
       text: "Home to Movement Kids. Check in at the kiosk just inside the lobby, then head down here.",
+      photo: "img/place-kids-hallway.webp",
       shape: "M903,1244 L903,2325 L820,2325 L820,2028 L794,2003 L794,1722 L819,1697 L819,1244 Z", label: [861, 1824], labelVertical: true,
       route: hall(2300)
     },
@@ -98,27 +100,28 @@
     {
       id: "offices", name: "Offices", group: "other",
       text: "The church offices.",
+      photo: "img/place-offices.webp",
       shape: "M547,1057 L738,1057 L738,1116 L776,1180 L790,1208 L816,1208 L816,1398 L547,1398 Z", label: [660, 1240],
       route: FROM_DOORS.concat([[640, 1050]])
     },
 
     /* ---- Rooms still to be named: tell the web team what each number is ---- */
-    { id: "r5", name: "2s & 3s", group: "kids", text: "Movement Kids room for 2 and 3 year olds.", shape: "M664,1410 L819,1410 L819,1697 L794,1722 L664,1722 Z", label: [740, 1564], route: hall(1632).concat([[819, 1632]]) },
-    { id: "r6", name: "Nursery", group: "kids", text: "The Movement Kids nursery, for our littlest ones.", shape: "M462,1722 L726,1722 L726,1776 L794,1776 L794,1906 L608,1906 L578,1936 L462,1936 Z", label: [600, 1830], route: hall(1804).concat([[794, 1804]]) },
+    { id: "r5", name: "2s & 3s", group: "kids", text: "Movement Kids room for 2 and 3 year olds.", photo: "img/place-2s-3s.webp", shape: "M664,1410 L819,1410 L819,1697 L794,1722 L664,1722 Z", label: [740, 1564], route: hall(1632).concat([[819, 1632]]) },
+    { id: "r6", name: "Nursery", group: "kids", text: "The Movement Kids nursery, for our littlest ones.", photo: "img/place-nursery.webp", shape: "M462,1722 L726,1722 L726,1776 L794,1776 L794,1906 L608,1906 L578,1936 L462,1936 Z", label: [600, 1830], route: hall(1804).concat([[794, 1804]]) },
     { id: "kids-bathroom", name: "Kids Bathroom", group: "kids", small: true, text: "A bathroom just for kids, inside the kids\u2019 area.", shape: "M728,1722 L794,1722 L794,1774 L728,1774 Z", label: [761, 1748], route: hall(1804).concat([[794, 1804], [712, 1792], [712, 1736], [728, 1736]]) },
     { id: "r7", name: "Storage Closet", group: "other", hidden: true, small: true, text: "Staff only.", shape: "M462,1938 L576,1938 L576,2004 L462,2004 Z", label: [519, 1971], route: hall(1804).concat([[794, 1804], [600, 1880], [562, 1925], [562, 1950]]) },
-    { id: "r8", name: "4s & 5s", group: "kids", text: "Movement Kids room for 4 and 5 year olds.", shape: "M610,1908 L794,1908 L794,2003 L580,2003 L580,1938 Z", label: [690, 1956], route: hall(1928).concat([[794, 1928]]) },
-    { id: "r9", name: "Club 56", group: "youth", text: "Grades 5 &amp; 6 head to Club 56 during the service.", shape: "M664,2003 L794,2003 L820,2028 L820,2325 L664,2325 Z", label: [740, 2167], route: hall(2134).concat([[820, 2134]]) },
-    { id: "r10", name: "Kids Auditorium", group: "kids", text: "Where Movement Kids gathers during both services.", shape: "M905,1402 L1275,1402 L1275,2003 L905,2003 Z", label: [1090, 1705], route: hall(1570).concat([[905, 1570]]) },
-    { id: "r11", name: "Kitchen", group: "other", small: true, text: "The church kitchen.", shape: "M907,2007 L1061,2007 L1061,2105 L907,2105 Z", label: [984, 2056], route: hall(1870).concat([[905, 1870], [1037, 1975], [1037, 2015]]) },
+    { id: "r8", name: "4s & 5s", group: "kids", text: "Movement Kids room for 4 and 5 year olds.", photo: "img/place-4s-5s.webp", shape: "M610,1908 L794,1908 L794,2003 L580,2003 L580,1938 Z", label: [690, 1956], route: hall(1928).concat([[794, 1928]]) },
+    { id: "r9", name: "Club 56", group: "youth", text: "Grades 5 &amp; 6 head to Club 56 during the service.", photo: "img/place-club56.webp", shape: "M664,2003 L794,2003 L820,2028 L820,2325 L664,2325 Z", label: [740, 2167], route: hall(2134).concat([[820, 2134]]) },
+    { id: "r10", name: "Kids Auditorium", group: "kids", text: "Where Movement Kids gathers during both services.", photo: "img/place-kids-auditorium.webp", shape: "M905,1402 L1275,1402 L1275,2003 L905,2003 Z", label: [1090, 1705], route: hall(1570).concat([[905, 1570]]) },
+    { id: "r11", name: "Kitchen", group: "other", small: true, text: "The church kitchen.", photo: "img/place-kitchen.webp", shape: "M907,2007 L1061,2007 L1061,2105 L907,2105 Z", label: [984, 2056], route: hall(1870).concat([[905, 1870], [1037, 1975], [1037, 2015]]) },
     { id: "r12", name: "Offices", group: "other", small: true, text: "Staff offices.", shape: "M983,2109 L1061,2109 L1061,2218 L983,2218 Z", label: [1022, 2160], route: hall(2205).concat([[905, 2205], [1000, 2205]]) },
-    { id: "nursing", name: "Nursing Moms", group: "kids", small: true, text: "A quiet, private room for nursing moms and little ones.", shape: "M907,2109 L979,2109 L979,2218 L907,2218 Z", label: [943, 2158], route: hall(2205).concat([[905, 2205], [940, 2205]]) },
-    { id: "r13", name: "Kids Bathroom", group: "kids", small: true, text: "A bathroom just for kids, off the Kids Hallway.", shape: "M907,2222 L1061,2222 L1061,2326 L907,2326 Z", label: [984, 2274], route: hall(2240).concat([[905, 2240]]) },
-    { id: "family-bathroom", name: "Family Bathroom", group: "other", small: true, labelScale: 0.85, text: "A private bathroom with room for the whole family.", shape: "M906,1242 L959,1242 L959,1298 L906,1298 Z", label: [932, 1270], route: FROM_DOORS.concat([[900, 1150], [990, 1270], [961, 1283]]) },
+    { id: "nursing", name: "Nursing Moms", group: "kids", small: true, text: "A quiet, private room for nursing moms and little ones.", photo: "img/place-nursing.webp", shape: "M907,2109 L979,2109 L979,2218 L907,2218 Z", label: [943, 2158], route: hall(2205).concat([[905, 2205], [940, 2205]]) },
+    { id: "r13", name: "Kids Bathroom", group: "kids", small: true, text: "A bathroom just for kids, off the Kids Hallway.", photo: "img/place-kids-washroom.webp", shape: "M907,2222 L1061,2222 L1061,2326 L907,2326 Z", label: [984, 2274], route: hall(2240).concat([[905, 2240]]) },
+    { id: "family-bathroom", name: "Family Bathroom", group: "other", small: true, labelScale: 0.85, text: "A private bathroom with room for the whole family.", photo: "img/place-family-bathroom.webp", shape: "M906,1242 L959,1242 L959,1298 L906,1298 Z", label: [932, 1270], route: FROM_DOORS.concat([[900, 1150], [990, 1270], [961, 1283]]) },
     { id: "janitorial", name: "Janitorial Closet", group: "other", hidden: true, small: true, text: "Staff only.", shape: "M906,1302 L981,1302 L981,1398 L906,1398 Z", label: [944, 1350], route: hall(1320).concat([[905, 1320]]) },
     { id: "r15", name: "Utility Room", group: "other", hidden: true, small: true, text: "Furnace and electrical. Staff only.", shape: "M986,1302 L1168,1302 L1168,1398 L986,1398 Z", label: [1077, 1350], route: FROM_DOORS.concat([[900, 1150], [990, 1270], [1004, 1290], [1004, 1314]]) },
-    { id: "wr1", name: "Women's Bathroom", group: "other", text: "Just off the lobby.", shape: "M1003,1059 L1063,1059 L1063,1094 L1067,1094 L1067,1059 L1165,1059 L1167,1175 L1020,1175 L1020,1136 L1036,1136 L1036,1088 L1030,1088 L1030,1109 L1003,1109", label: [1110, 1117], small: true, route: FROM_DOORS.concat([[1080, 1040]]) },
-    { id: "wr2", name: "Men's Bathroom", group: "other", text: "Just off the lobby.", shape: "M1019,1269 L1019,1181 L1112,1181 L1112,1244 L1116,1244 L1116,1181 L1168,1181 L1168,1298 L1053,1298 L1053,1264 L1049,1264 L1049,1298 L1021,1298 L1019,1298", label: [1078, 1238], small: true, route: FROM_DOORS.concat([[900, 1150], [990, 1270], [1032, 1282]]) }
+    { id: "wr1", name: "Women's Bathroom", group: "other", text: "Just off the lobby.", photo: "img/place-womens.webp", shape: "M1003,1059 L1063,1059 L1063,1094 L1067,1094 L1067,1059 L1165,1059 L1167,1175 L1020,1175 L1020,1136 L1036,1136 L1036,1088 L1030,1088 L1030,1109 L1003,1109", label: [1110, 1117], small: true, route: FROM_DOORS.concat([[1080, 1040]]) },
+    { id: "wr2", name: "Men's Bathroom", group: "other", text: "Just off the lobby.", photo: "img/place-mens.webp", shape: "M1019,1269 L1019,1181 L1112,1181 L1112,1244 L1116,1244 L1116,1181 L1168,1181 L1168,1298 L1053,1298 L1053,1264 L1049,1264 L1049,1298 L1021,1298 L1019,1298", label: [1078, 1238], small: true, route: FROM_DOORS.concat([[900, 1150], [990, 1270], [1032, 1282]]) }
   ];
 
   /* The floor-plan image covers this area of the original drawing */

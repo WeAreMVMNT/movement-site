@@ -80,8 +80,7 @@
       card.type = "button";
       card.innerHTML =
         '<img src="' + attr(photo.file) + '" alt="' + attr(plainText(photo.alt || photo.caption)) + '" draggable="false" loading="lazy">' +
-        '<span class="zoom" aria-hidden="true">+</span>' +
-        '<figcaption>' + photo.caption + '</figcaption>';
+        '<span class="zoom" aria-hidden="true">+</span>';
       if (copy) {
         /* the second set is only there to make the loop seamless */
         card.setAttribute("aria-hidden", "true");
