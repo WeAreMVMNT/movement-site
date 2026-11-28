@@ -39,6 +39,7 @@
     christmas: {
       page: "christmas.html",
       cls: "promo-pop--christmas",
+      go: { href: "https://wearemovement.churchcenter.com/registrations/events/4054213", label: "RSVP for Christmas Eve" },
       html:
         '<img class="promo-art" src="img/xmas-invitation.webp" alt="The Invitation" width="1536" height="768">' +
         '<h2 class="promo-title" id="promoTitle">Christmas at Movement</h2>' +
@@ -70,8 +71,11 @@
         '<button type="button" class="promo-x" aria-label="Close">&#10005;</button>' +
         promo.html +
         '<div class="promo-btns">' +
-          '<a class="pill promo-go" href="' + promo.page + '">Learn more</a>' +
-          '<button type="button" class="pill pill--ghost promo-later">Maybe later</button>' +
+          (promo.go
+            ? '<a class="pill promo-go" href="' + promo.go.href + '">' + promo.go.label + '</a>' +
+              '<a class="pill pill--ghost promo-later promo-more" href="' + promo.page + '">Learn more</a>'
+            : '<a class="pill promo-go" href="' + promo.page + '">Learn more</a>' +
+              '<button type="button" class="pill pill--ghost promo-later">Maybe later</button>') +
         "</div>" +
       "</div>";
     document.body.appendChild(pop);
@@ -96,7 +100,8 @@
     }
     document.addEventListener("keydown", onKey);
     pop.querySelector(".promo-x").addEventListener("click", close);
-    pop.querySelector(".promo-later").addEventListener("click", close);
+    var later = pop.querySelector("button.promo-later");
+    if (later) later.addEventListener("click", close);
     pop.addEventListener("click", function (e) { if (e.target === pop) close(); });
   }
 

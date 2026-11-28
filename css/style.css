@@ -1567,6 +1567,8 @@ html.lenis,html.lenis body{height:auto}
 .xmas-day--eve .xmas-date b{font-size:26px}
 .xmas-day--eve .xmas-dow{color:var(--x-green-lt)}
 .xmas-day--eve p{color:var(--x-cream)}
+.xmas-rsvp{background:var(--x-cream);border-color:var(--x-cream);color:#7a0c10;margin-top:4px}
+.xmas-rsvp:hover{background:var(--x-green);border-color:var(--x-green);color:#fff}
 .xmas-day--eve p a{color:var(--x-cream)}
 .xmas-slots{list-style:none;margin:4px 0 14px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .xmas-slots li{display:flex;flex-direction:column;padding:12px 18px;border-radius:16px;background:rgba(255,244,224,.12);border:1.5px solid rgba(255,244,224,.35)}
